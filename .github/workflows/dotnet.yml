@@ -17,8 +17,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: cd in
-      run: cd SatistackDiffer
     - name: Restore dependencies
       run: dotnet restore SatistackDiffer
     - name: Build
