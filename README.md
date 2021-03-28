@@ -1,5 +1,7 @@
 # SatistackDiffer
 
+[![.NET](https://github.com/LuizZak/SatistackDiffer/actions/workflows/dotnet.yml/badge.svg)](https://github.com/LuizZak/SatistackDiffer/actions/workflows/dotnet.yml)
+
 A command line tool to generate a document describing Satisfactory game's item stack changes.
 
 Usage:
