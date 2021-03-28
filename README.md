@@ -20,17 +20,17 @@ Example output created by diffing early access Update 3 against latest experimen
 ```markdown
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Game\FactoryGame\Resource\Parts\Cement\UI\IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
-| ![text](Game\FactoryGame\Resource\Parts\IronPlate\UI\IconDesc_IronPlates_64.png) </br>Iron Plate | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\IronRod\UI\IconDesc_IronRods_64.png) </br>Iron Rod | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\Cable\UI\IconDesc_Cables_64.png) </br>Cable | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\AluminumPlate\UI\IconDesc_AluminiumSheet_64.png) </br>Alclad Aluminum Sheet | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\Rubber\UI\IconDesc_Rubber_64.png) </br>Rubber | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\CopperSheet\UI\IconDesc_CopperSheet_64.png) </br>Copper Sheet | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\Plastic\UI\IconDesc_Plastic_64.png) </br>Plastic | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\SteelPipe\UI\IconDesc_SteelPipe_64.png) </br>Steel Pipe | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\SteelPlate\UI\IconDesc_SteelBeam_64.png) </br>Steel Beam | 100 | **200** |
-| ![text](Game\FactoryGame\Resource\Parts\Battery\UI\IconDesc_Battery_64.png) </br>Battery | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/Cement/UI/IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
+| ![text](Game/FactoryGame/Resource/Parts/IronPlate/UI/IconDesc_IronPlates_64.png) </br>Iron Plate | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/IronRod/UI/IconDesc_IronRods_64.png) </br>Iron Rod | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/Cable/UI/IconDesc_Cables_64.png) </br>Cable | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/AluminumPlate/UI/IconDesc_AluminiumSheet_64.png) </br>Alclad Aluminum Sheet | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/Rubber/UI/IconDesc_Rubber_64.png) </br>Rubber | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/CopperSheet/UI/IconDesc_CopperSheet_64.png) </br>Copper Sheet | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/Plastic/UI/IconDesc_Plastic_64.png) </br>Plastic | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/SteelPipe/UI/IconDesc_SteelPipe_64.png) </br>Steel Pipe | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/SteelPlate/UI/IconDesc_SteelBeam_64.png) </br>Steel Beam | 100 | **200** |
+| ![text](Game/FactoryGame/Resource/Parts/Battery/UI/IconDesc_Battery_64.png) </br>Battery | 100 | **200** |
 ```
 
 Markdown preview:

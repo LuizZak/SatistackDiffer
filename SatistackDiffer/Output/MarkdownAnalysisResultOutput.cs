@@ -49,8 +49,8 @@ namespace SatistackDiffer.Output
 
                 string imagePath = _iconSize switch
                 {
-                    MarkdownIconSize.Small_64x64 => _pathConverter.PathForImageResource(change.Old.SmallIcon),
-                    MarkdownIconSize.Large_256x256 => _pathConverter.PathForImageResource(change.Old.BigIcon),
+                    MarkdownIconSize.Small_64x64 => _pathConverter.PathForImageResource(change.Old.SmallIcon, PathSeparator.Unix),
+                    MarkdownIconSize.Large_256x256 => _pathConverter.PathForImageResource(change.Old.BigIcon, PathSeparator.Unix),
                     _ => ""
                 };
 

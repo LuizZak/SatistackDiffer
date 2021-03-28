@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace SatistackDiffer.Output
 {
@@ -7,7 +8,7 @@ namespace SatistackDiffer.Output
     /// </summary>
     public class RelativeDirectoryImagePathConverter : IImagePathConverter
     {
-        public string PathForImageResource(string imageResource)
+        public string PathForImageResource(string imageResource, PathSeparator pathSeparator)
         {
             // Images arrive in format
             // Texture2D'/Game/FactoryGame/Resource/X/Y/Z.Z
@@ -17,14 +18,25 @@ namespace SatistackDiffer.Output
             if (result.StartsWith("Texture2D'"))
                 result = result.Remove(0, "Texture2D'".Length);
 
-            // Split the string from the original separator into the OS' path separator
+            // Split the string from the original separator into the selected path separator
             string[] split = result.Split("/");
-            result = Path.Join(split);
+            result = JoinPath(split, pathSeparator);
 
             // Format the file name with a .png extension
             result = Path.ChangeExtension(result, ".png");
 
             return result;
+        }
+
+        private static string JoinPath(string[] segments, PathSeparator separator)
+        {
+            return separator switch
+            {
+                PathSeparator.Windows => string.Join("\\", segments)[1..],
+                PathSeparator.Unix => string.Join("/", segments)[1..],
+                PathSeparator.CurrentOsDefault => Path.Join(segments),
+                _ => throw new ArgumentOutOfRangeException(nameof(separator), separator, null)
+            };
         }
     }
 }
