@@ -31,7 +31,7 @@ namespace SatistackDifferTests.Output
             Assert.AreEqual(@"
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Game\FactoryGame\Resource\Parts\Cement\UI\IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
+| ![text](Game/FactoryGame/Resource/Parts/Cement/UI/IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
 ".Trim(), result);
         }
 
@@ -45,7 +45,7 @@ namespace SatistackDifferTests.Output
             Assert.AreEqual(@"
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Game\FactoryGame\Resource\Parts\Cement\UI\IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
+| ![text](Game/FactoryGame/Resource/Parts/Cement/UI/IconDesc_Concrete_64.png) </br>Concrete | 100 | **500** |
 ".Trim(), result);
         }
 
@@ -59,7 +59,7 @@ namespace SatistackDifferTests.Output
             Assert.AreEqual(@"
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Game\FactoryGame\Resource\Parts\NuclearWaste\UI\IconDesc_NuclearWaste_64.png) </br>Uranium Waste </br>(was 'Nuclear Waste') | 100 | **500** |
+| ![text](Game/FactoryGame/Resource/Parts/NuclearWaste/UI/IconDesc_NuclearWaste_64.png) </br>Uranium Waste </br>(was 'Nuclear Waste') | 100 | **500** |
 ".Trim(), result);
         }
 

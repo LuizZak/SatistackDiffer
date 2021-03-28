@@ -100,13 +100,13 @@ namespace SatistackDifferTests
 
             var output = new MarkdownAnalysisResultOutput(result, new RelativeDirectoryImagePathConverter());
 
-            var markdown = output.BuildMarkdown();
+            string markdown = output.BuildMarkdown();
 
             Assert.AreEqual(@"
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Game\FactoryGame\Resource\Parts\NuclearWaste\UI\IconDesc_NuclearWaste_64.png) </br>Uranium Waste </br>(was 'Nuclear Waste') | 500 | **50** |
-| ![text](Game\FactoryGame\Resource\Parts\Cement\UI\IconDesc_Concrete_64.png) </br>Concrete | 100 | **1** |
+| ![text](Game/FactoryGame/Resource/Parts/NuclearWaste/UI/IconDesc_NuclearWaste_64.png) </br>Uranium Waste </br>(was 'Nuclear Waste') | 500 | **50** |
+| ![text](Game/FactoryGame/Resource/Parts/Cement/UI/IconDesc_Concrete_64.png) </br>Concrete | 100 | **1** |
 ".Trim(), markdown);
         }
     }

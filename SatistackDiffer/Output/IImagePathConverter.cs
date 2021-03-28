@@ -5,6 +5,13 @@
     /// </summary>
     public interface IImagePathConverter
     {
-        string PathForImageResource(string imageResource);
+        string PathForImageResource(string imageResource, PathSeparator separator);
+    }
+
+    public enum PathSeparator
+    {
+        Windows,
+        Unix,
+        CurrentOsDefault
     }
 }
