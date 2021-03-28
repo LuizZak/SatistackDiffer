@@ -39,17 +39,17 @@ Markdown preview:
 
 | Material | Old Stack | New Stack |
 | - | - | - |
-| ![text](Docs\img\concrete.png) </br>Concrete | 100 | **500** |
-| ![text](Docs\img\ironplates.png) </br>Iron Plate | 100 | **200** |
-| ![text](Docs\img\ironrods.png) </br>Iron Rod | 100 | **200** |
-| ![text](Docs\img\cables.png) </br>Cable | 100 | **200** |
-| ![text](Docs\img\aluminiumsheet.png) </br>Alclad Aluminum Sheet | 100 | **200** |
-| ![text](Docs\img\rubber.png) </br>Rubber | 100 | **200** |
-| ![text](Docs\img\coppersheet.png) </br>Copper Sheet | 100 | **200** |
-| ![text](Docs\img\plastic.png) </br>Plastic | 100 | **200** |
-| ![text](Docs\img\steelpipe.png) </br>Steel Pipe | 100 | **200** |
-| ![text](Docs\img\steelbeam.png) </br>Steel Beam | 100 | **200** |
-| ![text](Docs\img\battery.png) </br>Battery | 100 | **200** |
+| ![text](Docs/img/concrete.png) </br>Concrete | 100 | **500** |
+| ![text](Docs/img/ironplates.png) </br>Iron Plate | 100 | **200** |
+| ![text](Docs/img/ironrods.png) </br>Iron Rod | 100 | **200** |
+| ![text](Docs/img/cables.png) </br>Cable | 100 | **200** |
+| ![text](Docs/img/aluminiumsheet.png) </br>Alclad Aluminum Sheet | 100 | **200** |
+| ![text](Docs/img/rubber.png) </br>Rubber | 100 | **200** |
+| ![text](Docs/img/coppersheet.png) </br>Copper Sheet | 100 | **200** |
+| ![text](Docs/img/plastic.png) </br>Plastic | 100 | **200** |
+| ![text](Docs/img/steelpipe.png) </br>Steel Pipe | 100 | **200** |
+| ![text](Docs/img/steelbeam.png) </br>Steel Beam | 100 | **200** |
+| ![text](Docs/img/battery.png) </br>Battery | 100 | **200** |
 
 ---
 
