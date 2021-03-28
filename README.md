@@ -7,7 +7,7 @@ A command line tool to generate a document describing Satisfactory game's item s
 Usage:
 
 ```
-SatistackDiffer --old C:\path\to\old\Docs.json --new C:\path\to\new\Satistack\Docs.json --output C:\path\to\output\updated.md
+SatistackDiffer --old C:\path\to\old\Docs.json --new C:\path\to\new\Docs.json --output C:\path\to\output\updated.md
 ```
 
 The tool generates a [Markdown](https://daringfireball.net/projects/markdown/) file at the given output location.
