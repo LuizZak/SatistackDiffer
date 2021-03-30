@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SatistackDiffer.Analysis;
 using SatistackDiffer.Model;
@@ -6,7 +7,7 @@ using SatistackDiffer.Output;
 namespace SatistackDifferTests.Output
 {
     [TestClass]
-    public class MarkdownAnalysisResultOutputTests
+    public class MarkdownAnalysisResultOutputCreatorTests
     {
         [TestMethod]
         public void TestBuildMarkdown_EmptyResult()
@@ -63,11 +64,26 @@ namespace SatistackDifferTests.Output
 ".Trim(), result);
         }
 
+        [TestMethod]
+        public void TestCreateFileOutputs()
+        {
+            var sut = MakeSut(MakeEmptyResult(), @"Z:\test.md");
+
+            var result = sut.CreateFileOutputs();
+
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(@"Z:\test.md", result[0].Path);
+            Assert.AreEqual(@"
+| Material | Old Stack | New Stack |
+| - | - | - |
+".Trim(), Encoding.UTF8.GetString(result[0].Contents));
+        }
+
         #region
 
-        private static MarkdownAnalysisResultOutput MakeSut(AnalysisResult result)
+        private static MarkdownAnalysisResultOutputCreator MakeSut(AnalysisResult result, string path = @"ZZZ:\test.md")
         {
-            return new MarkdownAnalysisResultOutput(result, new RelativeDirectoryImagePathConverter());
+            return new MarkdownAnalysisResultOutputCreator(result, new RelativeDirectoryImagePathConverter(), path);
         }
 
         private static AnalysisResult MakeEmptyResult()
