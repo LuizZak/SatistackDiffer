@@ -1,18 +1,17 @@
-﻿using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SatistackDiffer.Analysis;
-using SatistackDiffer.Input;
-using SatistackDiffer.Output;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SatistackDiffer;
+using System.IO;
+using System.Text;
 
 namespace SatistackDifferTests
 {
     [TestClass]
-    public class IntegrationTests
+    public class MainInvocationTests
     {
         [TestMethod]
-        public void TestIntegration_Markdown()
+        public void RunAnalysis_StateUnderTest_ExpectedBehavior()
         {
-            var oldJson = TestUtils.JsonFromString(@"
+            var oldJsonStream = TestUtils.StreamFromString(@"
                 [
                     {
                         ""NativeClass"": ""Class'/Script/FactoryGame.FGItemDescriptor'"",
@@ -52,8 +51,7 @@ namespace SatistackDifferTests
                         ]
                     }
                 ]");
-
-            var newJson = TestUtils.JsonFromString(@"
+            var newJsonStream = TestUtils.StreamFromString(@"
                 [
                     {
                         ""NativeClass"": ""Class'/Script/FactoryGame.FGItemDescriptor'"",
@@ -94,23 +92,23 @@ namespace SatistackDifferTests
                     }
                 ]");
 
-            var oldDocs = DocsParser.Parse(oldJson);
-            var newDocs = DocsParser.Parse(newJson);
+            var sut = new MainInvocation
+            {
+                OldPath = @"ZZZ:\old.json",
+                NewPath = @"ZZZ:\new.json",
+                OutputPath = @"ZZZ:\test.md"
+            };
+            
+            var result = sut.RunAnalysis(oldJsonStream, newJsonStream);
 
-            var result = DocsAnalyzer.Analyze(oldDocs, newDocs);
-
-            var output = new MarkdownAnalysisResultOutputCreator(result, new RelativeDirectoryImagePathConverter(), @"ZZZ:\test.md");
-
-            var markdown = output.CreateFileOutputs();
-
-            Assert.AreEqual(1, markdown.Length);
-            Assert.AreEqual(@"ZZZ:\test.md", markdown[0].Path);
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(@"ZZZ:\test.md", result[0].Path);
             Assert.AreEqual(@"
 | Material | Old Stack | New Stack |
 | - | - | - |
 | ![text](Game/FactoryGame/Resource/Parts/NuclearWaste/UI/IconDesc_NuclearWaste_64.png) </br>Uranium Waste </br>(was 'Nuclear Waste') | 500 | **50** |
 | ![text](Game/FactoryGame/Resource/Parts/Cement/UI/IconDesc_Concrete_64.png) </br>Concrete | 100 | **1** |
-".Trim(), Encoding.UTF8.GetString(markdown[0].Contents));
+".Trim(), Encoding.UTF8.GetString(result[0].Contents));
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Text;
 using SatistackDiffer.Analysis;
 using SatistackDiffer.Common;
@@ -9,26 +8,29 @@ namespace SatistackDiffer.Output
     /// <summary>
     /// Produces a Markdown file as output of an analysis result
     /// </summary>
-    public class MarkdownAnalysisResultOutput : IAnalysisResultOutput
+    public class MarkdownAnalysisResultOutputCreator : IAnalysisResultOutputCreator
     {
         private readonly AnalysisResult _analysis;
         private readonly IImagePathConverter _pathConverter;
+        private readonly string _path;
         private readonly MarkdownIconSize _iconSize;
 
-        public MarkdownAnalysisResultOutput(AnalysisResult analysis, IImagePathConverter pathConverter, MarkdownIconSize iconSize = MarkdownIconSize.Small_64x64)
+        public MarkdownAnalysisResultOutputCreator(AnalysisResult analysis, IImagePathConverter pathConverter, string path, MarkdownIconSize iconSize = MarkdownIconSize.Small_64x64)
         {
             _analysis = analysis;
             _pathConverter = pathConverter;
+            _path = path;
             _iconSize = iconSize;
         }
 
-        public void Output(string path)
+        public AnalysisFileOutput[] CreateFileOutputs()
         {
             string output = BuildMarkdown();
 
-            using var file = File.CreateText(path);
-            file.Write(output);
-            file.Flush();
+            return new[]
+            {
+                new AnalysisFileOutput(_path, Encoding.UTF8.GetBytes(output))
+            };
         }
 
         internal string BuildMarkdown()
